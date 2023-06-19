@@ -1,0 +1,28 @@
+﻿@page
+@using System.Data.SqlClient;
+@{
+    try
+    {
+        String id = Request.Query["id"];
+        String connectionString = "Data Source=(localdb)\\ProjectsV13;Initial Catalog=ProgrammingDB;Integrated Security=True";
+        using (SqlConnection connection = new SqlConnection(connectionString))
+        {
+            connection.Open();
+            String sql = "Delete FROM clients WHERE id=@id";
+            using (SqlCommand command = new SqlCommand(sql, connection))
+            {
+                command.Parameters.AddWithValue("@id", id);
+
+                command.ExecuteNonQuery();
+            }
+        }
+        Response.Redirect("/Clients/Index");
+    }
+
+    catch (Exception ex)
+    {
+        @ex.Message
+    }
+   
+
+}

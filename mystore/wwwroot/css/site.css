@@ -1,0 +1,122 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400');
+@import url('https://fonts.googleapis.com/css?family=Roboto:100');
+a.navbar-brand {
+ 
+  text-align: center;
+ display:flex;
+  word-break: break-all;
+  
+  flex-wrap:wrap;
+  padding:5px 10px;
+}
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #967969;
+}
+.logo {
+    max-width: 70%;
+    position: relative;
+    
+}
+
+nav ul li ::after {
+    content: '';
+    width: 0px;
+    height: 5px;
+    background: #9A2A2A;
+    position: absolute;
+    left: 0px;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li :hover::after
+{
+    width:100%
+}
+
+
+
+.btn.btn-outline-primary{
+    background-color: #967969;
+    border-color: #E5AA70;
+   
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: #B2BEB5;
+}
+    .btn.btn-outline-primary:hover {
+        -webkit-transition: all .15s ease-in-out;
+        transition: all .15s ease-in-out;
+        color: #B2BEB5;
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #1b6ec2;
+  border-color: #1861ac;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 20px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+.logo {
+    max-width: 100%;
+    position:relative;
+    top:5px;
+    left:15px;
+    max-height:fit-content;
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+.table.table-responsive-md {
+    background-color: #967969;
+}
+.form-box {
+    background-color:#fff;
+}
+.table{
+    align-content:center;
+}

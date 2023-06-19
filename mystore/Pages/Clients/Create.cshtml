@@ -1,0 +1,100 @@
+﻿@page
+@model mystore.Pages.Clients.CreateModel
+@addTagHelper *,Microsoft.AspNetCore.MVC.TagHelpers
+
+
+<br>
+<h2>New Client</h2>
+
+
+@if (Model.errorMessage.Length > 0)
+{
+
+    <div class='alert alert-warning alert-dismissible show' role="alert">
+        <strong>
+            @Model.errorMessage
+        </strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+
+    </div>
+
+}
+
+
+<form method="Post">
+    <table class="table table-responsive-md w-100 table-striped table-bordered  text-white" cellspacing="0" cellpadding="4" rules="all" border="1" style="border-collapse:collapse;">
+        <tbody>
+            <tr class="thead-primary text-white text-center Email">
+                <th scope="col" style="color: white;">Name</th>
+                <th scope="col" style="color: white;">Email</th>        
+                <th scope="col" style="color: white;">Phone</th>
+                <th scope="col" style="color: white;">Address</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="text" class="form-control" name="name" value="@Model.clientInfo.name">
+                </td>
+                <td>
+                    <input type="text" class="form-control" name="email" value="@Model.clientInfo.email">
+                </td>
+                <td>
+                    <input type="text" class="form-control" name="phone" value="@Model.clientInfo.phone">
+                </td>
+                <td>
+                    <input type="text" class="form-control" name="address" value="@Model.clientInfo.address">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+  
+
+    
+
+
+
+    @if (Model.successMessage.Length > 0)
+    {
+
+        <div class="row mb-3">
+            <div class="col-sm-9">
+                <div class="alert alert-success show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>@Model.successMessage</strong>
+
+                </div>
+            </div>
+        </div>
+    }
+
+    <div class="row mb-3">
+        <div class="offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-sm-2 d-grid">
+            <button type="button" class="btn btn-outline-primary" onclick="window.location.reload()">Refresh</button>
+            <script>
+                function reloadPageNTimes(n) {
+                    for (let i = 0; i < n; i++) {
+                        window.location.reload();
+                    }
+                }
+            </script>
+
+        </div>
+
+        <div class="col-sm-2 d-grid">
+            <a class="btn btn-outline-primary" href="/" role="button">Cancel</a>
+        </div>
+
+    </div>
+
+
+
+</form>
+
+
+

@@ -1,0 +1,23 @@
+﻿@page
+@model mystore.Pages.Clients.SearchModel
+@{
+}
+<br />
+
+@if (Model.errorMessage.Length == 0)
+{
+
+    <div class='alert alert-warning alert-heading fade show' role="alert">
+        <strong>
+            @Model.errorMessage
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </strong>
+
+
+    </div>
+
+}
+
+

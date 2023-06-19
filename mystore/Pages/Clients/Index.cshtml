@@ -1,0 +1,55 @@
+﻿@page
+@model mystore.Pages.Clients.IndexModel
+@{
+}
+<br />
+<h2>List of clients</h2>
+ <a class='btn btn-primary btn-sm' href='/Clients/Create'>
+            New Clients
+ </a>
+   
+
+
+
+<table class="table table-responsive-md w-100 table-striped table-bordered" cellspacing="0" cellpadding="4" rules="all" border="1" style="border-collapse:collapse;">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Created At</th>
+            <th>Modified At</th>
+
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model.listClients)
+        {
+            <tr>
+                <td class="form-box text-center" style="white-space:normal; width:50px" ;>@client.id</td>
+                <td class="form-box text-center" style="white-space: normal; width: 50px;">@client.name</td>
+                <td class="form-box text-center" style="white-space: normal; width:50px" ;>@client.email</td>
+                <td class="form-box text-center" style="white-space: normal; width: 50px;">@client.phone</td>
+                <td class="form-box text-center" style="white-space: normal; width: 50px;">@client.address</td>
+                <td class="form-box text-center" style="white-space: normal; width: 50px;">@client.created_at</td>
+                <td class="form-box text-center" style="white-space: normal; width: 50px;">@client.modified_at</td>
+                <td class="form-box text-center" style="white-space: normal; background-color: white;">
+
+
+                    <a class="btn btn-outline-primary btn-sm" href="/Clients/Edit?id=@client.id">Edit</a>
+                    <a class="btn btn-outline-primary btn-sm" href="/Clients/Delete?id=@client.id">Delete</a>
+                </td>
+
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+

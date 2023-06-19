@@ -1,0 +1,33 @@
+﻿@page
+@model mystore.Pages.Contact.ContactModel
+@{
+}
+<br />
+<h2>Contact Us</h2>
+
+
+<form method="Post" action="/Contact">
+
+    <div class="form-group">
+        <label class=" col-sm-3 col-form-label">Name</label>
+        <input type="text" class="form-control" name="Name" asp-for="Name" />
+
+
+    </div>
+    <div class="form-group">
+        <label class=" col-sm-3 col-form-label">Email</label>
+        <input type="text" class="form-control" name="Email" asp-for="Email" />
+
+
+    </div>
+    <div class="form-group">
+        <label class=" col-sm-3 col-form-label">Message</label>
+        <textarea class="form-control" name="Message" asp-for="Message"></textarea>
+
+
+    </div>
+    <button type="submit" class="btn btn-primary">
+        Submit
+    </button>
+
+</form>
